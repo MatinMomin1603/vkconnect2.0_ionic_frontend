@@ -1,0 +1,74 @@
+ion-content{
+}
+.container
+{
+    margin-top: 2rem;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+th{
+    background-color: var(--ion-color-custom-blue);
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 500 !important;
+    border-right: 1px solid;
+
+}
+td{
+    color: white;
+    padding: 5px;
+    display: revert;
+    text-align: center;
+    border-right: 1px solid;
+}
+
+.head {
+    height: 60px;
+  }
+
+  ion-header {
+    --background: var(--ion-color-custom-blue);
+    height: 60px;
+  }
+
+  tr {
+    border-bottom: 5px solid #ffffff;
+  }
+
+  .blue-class {
+    background-color: var(--ion-color-custom-blue);
+  }
+
+
+  .quiz_name {
+    text-align: center;
+    font-size: 16px;
+    color: darkslategrey;
+    padding: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 5px 5px 15px #d4d4d4, -5px -5px 15px #ffffff;
+    font-weight: 500;
+}
+
+ion-segment-button {
+  --indicator-color: #24518c;
+}
+
+/* Material Design styles */
+ion-segment-button.md {
+  --color: #000;
+  --color-checked: #24518c;
+  --indicator-height: 4px;
+}
+
+/* iOS styles */
+ion-segment-button.ios {
+  --color: #24518c;
+  --color-checked: #fff;
+  --border-radius: 20px;
+}

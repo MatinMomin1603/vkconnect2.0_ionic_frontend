@@ -1,0 +1,168 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+// .head {
+//   --background: var(--ion-color-custom-blue);
+//   color: white;
+// }
+
+.head {
+  // border-bottom-left-radius: 35px;
+  // border-bottom-right-radius: 35px;
+  // height: 60px;
+  --background: var(--ion-color-custom-blue);
+  color: white;
+}
+
+ion-header {
+  --background: var(--ion-color-custom-blue);
+}
+
+ion-popover .my-quiz-explain-pop .popover-wrapper .popover-content {
+  --width: 300px;
+  border-radius: 15px;
+  background: transparent;
+  box-shadow: none;
+  // --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+  ion-backdrop {
+    // --backdrop-opacity: 0.1 !important;
+  }
+
+}
+
+.custom-modal {
+  --background: #f6f6f6e6;;
+  --box-shadow: none;
+  // --max-height: 50vh;
+}
+
+.thanks-modal {
+  --width: 40%;
+  --height: 65%;
+  // --height: auto;
+  --background: var(--ion-color-custom-blue);
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+
+.thanks-modal-mobile {
+  --width: 90%;
+  --height: 65%;
+  // --height: auto;
+  --background: var(--ion-color-custom-blue);
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.congrats-modal-mobile {
+  --width: 90%;
+  --height: 50%;
+  --background: var(--ion-color-custom-blue);
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+.congrats-modal-mobile-android {
+  --width: 90%;
+  --height: 60%;
+  --background: var(--ion-color-custom-blue);
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.thanks-modal-mobile-android {
+  --width: 90%;
+  --height: 65%;
+  --background: var(--ion-color-custom-blue);
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.thanks-modal-mobile-ios {
+  --width: 90%;
+  --height: 45%;
+  --background: var(--ion-color-custom-blue);
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.feedback-modal {
+  --width: 40%;
+  // --height: auto;
+  --background: var(--ion-color-custom-blue);
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.feedback-modal-mobile {
+  --height: 60%;
+  --width: 95%;
+  // --height: auto;
+  --background: var(--ion-color-custom-blue);
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.feedback-modal-mobile-android {
+  --height: 70%;
+  --width: 95%;
+  // --height: auto;
+  --background: var(--ion-color-custom-blue);
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+
+ion-modal::part(backdrop) {
+  background: rgba(209, 213, 219);
+  opacity: 1;
+}
+
+ion-modal ion-toolbar {
+  // --background: rgb(14 116 144);
+  --color: white;
+}
+
+
+ion-popover .my-quiz-explanation-pop .popover-wrapper .popover-content {
+  --width: 460px;
+  border-radius: 15px;
+  background: transparent;
+  box-shadow: none;
+  // --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+  ion-backdrop {
+    // --backdrop-opacity: 0.1 !important;
+  }
+
+}
+
+// .sc-ion-popover-md-h {
+//   --backdrop-opacity: 0.7 !important;
+//   background:#949090b3 !important;
+
+// }

@@ -1,0 +1,94 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="head">
+    <ion-title class="ion-text-center" style="font-size: 18px;">LEADERBOARD</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: white !important;" defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" style="visibility: hidden;">
+      <ion-back-button style="color: white !important;" defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <ion-row *ngIf="report?.quiz_data?.quiz_name">
+      <ion-col size="12">
+        <div class="quiz_name">
+          <ion-label>{{report?.quiz_data?.quiz_name}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-segment [(ngModel)]="type" (ionChange)="segmentChanged($event)">
+          <ion-segment-button value="today">
+            <ion-label>Today</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="weekly">
+            <ion-label>Weekly</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="global">
+            <ion-label>Global</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+
+    <ng-container *ngIf="type == 'today' ">
+      <ion-row *ngIf="from == 'leaderBoard' && isShow">
+        <ion-col size-xs="12" size-md="6" size-sm="12" size-lg="6" style="margin: auto;">
+          <table>
+            <tr style="text-align: center;">
+              <th>Doctor Name</th>
+              <th style="border-right: none !important;">Status</th>
+            </tr>
+            <tr style="background-color: green;" *ngFor="let item of report?.today">
+              <td>{{item?.firstname + " " + item?.lastname}}</td>
+              <td style="border-right: none !important;">{{item?.rank}}</td>
+            </tr>
+          </table>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+
+    <ng-container *ngIf="type == 'weekly' ">
+      <ion-row *ngIf="from == 'leaderBoard' && isShow">
+        <ion-col size-xs="12" size-md="6" size-sm="12" size-lg="6" style="margin: auto;">
+          <table>
+            <tr style="text-align: center;">
+              <th>Doctor Name</th>
+              <th style="border-right: none !important;">Status</th>
+            </tr>
+            <tr style="background-color: green;" *ngFor="let item of report?.weekly">
+              <td>{{item?.firstname + " " + item?.lastname}}</td>
+              <td style="border-right: none !important;">{{item?.rank}}</td>
+            </tr>
+          </table>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+
+    <ng-container *ngIf="type == 'global' ">
+      <ion-row *ngIf="from == 'leaderBoard' && isShow">
+        <ion-col size-xs="12" size-md="6" size-sm="12" size-lg="6" style="margin: auto;">
+          <table>
+            <tr style="text-align: center;">
+              <th>Doctor Name</th>
+              <th style="border-right: none !important;">Status</th>
+            </tr>
+            <tr style="background-color: green;" *ngFor="let item of report?.global">
+              <td>{{item?.firstname + " " + item?.lastname}}</td>
+              <td style="border-right: none !important;">{{item?.rank}}</td>
+            </tr>
+          </table>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+
+  </ion-grid>
+
+</ion-content>

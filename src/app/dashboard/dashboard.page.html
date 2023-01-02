@@ -1,0 +1,158 @@
+<!-- eslint-disable @angular-eslint/template/eqeqeq -->
+<ion-header class="ion-no-border">
+  <ion-toolbar class="head">
+    <ion-title class="ion-text-center" style="font-size: 25px;line-height: 25px;">Quiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-row>
+    <ion-col size="12">
+
+      <ion-row>
+        <ion-col size-xs="4.5" size-sm="4.5" style="text-align: center;">
+        </ion-col>
+        <ion-col size-xs="4.5" size-sm="4.5"></ion-col>
+        <ion-col size-xs="3" size-sm="3">
+        </ion-col>
+      </ion-row>
+
+      <ion-grid fixed>
+        <ion-row *ngIf="todaysQuiz">
+          <ion-col size-xs="12" size-sm="12" size-md="6" style="text-align: end;margin: auto;">
+            <ion-chip (click)="gotoReport('leaderBoard', todaysQuiz?._id)"
+              style="text-align: center;height: 25px;color: #24518c;text-transform: uppercase;letter-spacing: 0px;font-size: 12px;">
+              LeaderBoard
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="todaysQuiz">
+          <ion-col size-xs="12" size-sm="12" size-md="6" style="margin: auto;">
+            <div class="banner-div" (click)="goToQuestions(todaysQuiz?._id,todaysQuiz, todaysQuiz?.is_completed, 1)">
+              <img alt="Question Of The Day" src="assets/icon/QueofDay.svg"
+                style="display: block;border-radius: 5px;height:100%;width: 100%;" />
+                <ion-chip style="text-align: center;height: 25px;color: #24518c;text-transform: uppercase;letter-spacing: 0px;font-size: 12px; position: absolute; top: 1rem;  background: #fff;">
+                Click Here To Play
+              </ion-chip>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <br *ngIf="todaysQuiz">
+
+        <ion-row>
+          <ion-col size-xs="12" size-sm="12" size-md="6" style="margin: auto;">
+            <ion-chip style="background: transparent;">
+              <ion-icon src="assets/icon/PastQuestions.svg"></ion-icon>
+              <ion-label style="color: #0d5191;font-weight: 500;">Past Questions</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12">
+            <div class="row">
+              <div class="column">
+                <ion-card class="neo-card" *ngFor="let item of evenArray;let i=index;">
+                  <ion-row>
+                    <ion-col size="12" style="text-align: center;">
+                      <ion-chip (click)="gotoReport('leaderBoard', item?._id)"
+                        style="text-align: center;height: 25px;color: #24518c;text-transform: uppercase;letter-spacing: 0px;font-size: 12px;">
+                        LeaderBoard
+                      </ion-chip>
+                    </ion-col>
+                  </ion-row>
+                  <ion-spinner *ngIf="item?.spinner" style="position: absolute;z-index: 99;" class="spin" name="lines">
+                  </ion-spinner>
+                  <img (click)="goToQuestions(item?._id,item, item?.is_completed, i, 'even')" alt="Question Of The Day"
+                    [src]="item?.image" onerror="this.src='./assets/images/cervical.jpg'"
+                    style="border-radius: 15px;cursor: pointer;" />
+
+                  <ion-card-header (click)="goToQuestions(item?._id,item, item?.is_completed, i, 'even')">
+                    <ion-card-title style="font-size: 16px;">{{ item?.quiz_name }}</ion-card-title>
+
+                    <ion-card-subtitle style="font-size: 14px;">
+                      <ion-row>
+                        <ion-col size="9">
+                          {{ item?.scheduled_at | date: 'mediumDate'}}
+                        </ion-col>
+                        <ion-col size="3" style="text-align: end;">
+                          <ion-icon *ngIf="item?.total == item?.questions.length" src="assets/icon/Attempted.svg"
+                            style="font-size: 18px;"></ion-icon>
+                        </ion-col>
+                      </ion-row>
+                    </ion-card-subtitle>
+
+                  </ion-card-header>
+
+                  <ion-card-content *ngIf="item?.total == item?.questions.length" style="padding: 0;">
+                    <ion-row>
+                      <ion-col size-xs="12" size-sm="12" style="text-align: end;">
+                        <ion-chip (click)="replay(item?._id)" *ngIf="item?.total == item?.questions.length"
+                          [ngClass]="item?.total == item?.questions.length ? 'replay' : (item && item?.total && item?.total != item?.questions.length) ? 'resume' : 'play'">
+                          Replay
+                        </ion-chip>
+                      </ion-col>
+                    </ion-row>
+                  </ion-card-content>
+
+                </ion-card>
+              </div>
+              <div class="column">
+                <ion-card class="neo-card" *ngFor="let item of oddArray;let i=index;">
+                  <ion-row>
+                    <ion-col size="12" style="text-align: center;">
+                      <ion-chip (click)="gotoReport('leaderBoard', item?._id)"
+                        style="text-align: center;height: 25px;color: #24518c;text-transform: uppercase;letter-spacing: 0px;font-size: 12px;">
+                        LeaderBoard
+                      </ion-chip>
+                    </ion-col>
+                  </ion-row>
+
+                  <ion-spinner *ngIf="item?.spinner" style="position: absolute;z-index: 99;" class="spin" name="lines">
+                  </ion-spinner>
+
+                  <img (click)="goToQuestions(item?._id,item, item?.is_completed, i, 'odd')"
+                    alt="Silhouette of mountains" [src]="item?.image" onerror="this.src='./assets/images/cervical.jpg'"
+                    style="border-radius: 15px;cursor: pointer;" />
+
+                  <ion-card-header (click)="goToQuestions(item?._id,item, item?.is_completed, i, 'odd')">
+                    <ion-card-title style="font-size: 16px;">{{ item?.quiz_name }}</ion-card-title>
+
+                    <ion-card-subtitle style="font-size: 14px;">
+                      <ion-row>
+                        <ion-col size="9">
+                          {{ item?.scheduled_at | date: 'mediumDate'}}
+                        </ion-col>
+                        <ion-col size="3" style="text-align: end;">
+                          <ion-icon *ngIf="item?.total == item?.questions.length" src="assets/icon/Attempted.svg"
+                            style="font-size: 18px;"></ion-icon>
+                        </ion-col>
+                      </ion-row>
+                    </ion-card-subtitle>
+
+                  </ion-card-header>
+
+                  <ion-card-content *ngIf="item?.total == item?.questions.length" style="padding: 0;">
+                    <ion-row>
+                      <ion-col size-xs="12" size-sm="12" style="text-align: end;">
+                        <ion-chip (click)="replay(item?._id)" *ngIf="item?.total == item?.questions.length"
+                          [ngClass]="item?.total == item?.questions.length ? 'replay' : (item && item?.total && item?.total != item?.questions.length) ? 'resume' : 'play'">
+                          Replay
+                        </ion-chip>
+                      </ion-col>
+                    </ion-row>
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-col>
+  </ion-row>
+</ion-content>

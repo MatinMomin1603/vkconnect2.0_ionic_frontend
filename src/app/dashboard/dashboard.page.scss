@@ -1,0 +1,308 @@
+.quiz-top
+{
+    background-color: #24518C !important;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    height: 63px;
+}
+
+.quiz-title
+{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 27px;
+    font-size: 25px;
+}
+
+.neo-card {
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  padding: 10px;
+  border-radius: 15px;
+  background: #efefef;
+  box-shadow:  5px 5px 10px #dcdcdc,
+              -5px -5px 10px #ffffff;
+}
+
+.progress-div {
+  box-shadow: 5px 5px 10px #dcdcdc, -3px -3px 10px #ffffff;
+  width: 100%;
+  display: flex;
+  border-radius: 5px;
+}
+
+
+
+ion-content {
+  --background: #EFEFEF;
+}
+
+.quiz-card
+{
+    background-color: #24518C;
+    border-radius: 10px;
+}
+
+.card-title
+{
+    font-size: 12px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 11px;
+}
+
+.count
+{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    padding: -5px;
+    padding-bottom: 5px;
+}
+
+
+    .games
+    {
+        display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #f3f3f3;
+    }
+
+    .knowledge
+    {
+        border-radius: 15px;
+        background-color: #24518C;
+        min-height: 100px;
+    }
+
+    .container
+    {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .loader
+    {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+        margin-top: 1rem;
+    }
+
+    /* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .drboard
+  {
+    float: right;
+  }
+
+  .leaderbtn
+  {
+    --border-radius: 16px;
+    width: 81px;
+    font-size: 9px;
+    height: 25px;
+    display: flex;
+    text-align: center;
+    --background: #24518C;
+  }
+
+
+  .head {
+    height: 60px;
+    --background: var(--ion-color-custom-blue);
+    color: white;
+  }
+
+  ion-header {
+    --background: var(--ion-color-custom-blue);
+    height: 60px;
+  }
+
+  ion-button {
+    text-transform: none;
+  }
+
+   .chip {
+    --background: #24518C;
+    --color: white;
+    height: 25px;
+  }
+
+  .que-card {
+    margin: 0 !important;
+    text-align: center;
+    color: white;
+  }
+
+  ion-card-header {
+    padding: 5px !important;
+  }
+
+
+.spin{
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+ion-spinner {
+  width: 40px;
+  height: 40px;
+  color: #24518C;
+}
+
+.expired {
+  text-align: end;
+  margin: 0;
+  padding: 10px;
+  margin-right: 5px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.expired-span {
+  background: #0d5191;
+  padding: 5px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.progress-bar {
+  height: 5px;
+  border-radius: 25px;
+  --background: #EFEFEF;
+  --progress-background: #86f594;
+}
+
+.progress-bar-incomplete {
+  height: 5px;
+  border-radius: 25px;
+  --background: white;
+  --progress-background: red;
+}
+
+.play {
+  --background: #efefef;
+  justify-content: center;
+  width: 100%;
+  height: 25px;
+  --color: black;
+  box-shadow: 2px 2px 3px #dcdcdc, -2px -2px 8px #ffffff;
+}
+
+.resume {
+  --background: #ff0000;
+  justify-content: center;
+  width: 100%;
+  height: 25px;
+  --color: white;
+  box-shadow: 2px 2px 3px #e5a0a0, -2px -2px 3px #ffbcbc;
+}
+
+.replay {
+  --background: #47c857;
+  justify-content: center;
+  width: 100%;
+  height: 25px;
+  --color: white;
+  box-shadow: 2px 2px 3px #a5ebac, -2px -3px 3px #c1ffca;
+}
+
+
+.pins {
+  column-count: 2;
+}
+
+.pin {
+  display: inline-block;
+  margin: 0 2px 10px;
+  padding: 5px;
+  background: #f8f8ff;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+// @media screen and (max-width: 600px) {
+//   .column {
+//     -ms-flex: 100%;
+//     flex: 100%;
+//     max-width: 100%;
+//   }
+// }
+
+.banner-div {
+  padding: 5px;
+  border-radius: 10px;
+  background: #e0e0e0;
+  box-shadow:  5px 5px 12px #cecece,
+              -5px -5px 12px #f2f2f2;
+}

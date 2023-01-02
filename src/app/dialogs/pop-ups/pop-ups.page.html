@@ -1,0 +1,168 @@
+<ng-container *ngIf="modelId == 1">
+  <div style="margin-bottom: 5px;border-radius:15px;">
+    <div style="text-align: -webkit-center;margin-bottom:10px;">
+      <ion-row>
+        <ion-col size="6" offset="3">
+          <div class="row"
+            style="text-align: center;background: #0d5191;height: 30px;display: flex;align-items: center;text-align: center;border-radius: 10px;">
+            <div style="text-align: center;width: 100%;">
+              <ion-label style="color:white;font-size: 16px;">Explanation</ion-label>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="quiz-box"
+      style="--box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);background:#0d5191;">
+      <div class="row"
+        style="width: unset !important; overflow-x: unset !important;white-space: unset !important;padding:10px;">
+        <div class="col-sm-12 col-md-12"
+          style="text-align: center;width: unset !important; overflow-x: unset !important;white-space: unset !important;">
+
+          <img *ngIf="data?.image" [src]="data?.image" style="height: 100%;width:100%;border-radius:10px;">
+          <p
+            style="color:white;text-align:start;font-weight: 400;letter-spacing: 0.5px;font-size: 16px;max-height: 80vh;overflow: auto;">
+            {{data?.description}}
+          </p>
+
+          <ion-row>
+            <ion-col size-sm="8" size-md="8" size-xs="8"></ion-col>
+            <ion-col size-sm="3.5" size-md="3.5" size-xs="3.5">
+              <ion-button
+                style="--background: #EFEFEF;--color: #3b7dbb;--border-radius:5px;text-transform:none;height:25px"
+                expand="block" fill="clear" (click)="closeModel()" shape="round">
+                <ion-label>Close</ion-label>
+              </ion-button>
+            </ion-col>
+            <ion-col size-sm="0.5" size-md="0.5" size-xs="0.5"></ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="modelId == 2">
+
+  <div style="border-radius:15px;">
+    <div>
+      <div class="row" style="text-align: end;">
+        <div class="col-sm-12 col-md-12" style="padding:0 !important">
+          <ion-icon (click)="closeModel('closed')"
+            style="font-size: 30px;color: #ffffff;margin-top:10px; margin-right:10px;cursor:pointer;"
+            name="close-sharp"></ion-icon>
+        </div>
+      </div>
+
+      <ion-row>
+        <ion-col size-sm="12" size-md="12" size-xs="12" style="text-align: center;">
+          <div style="width:100%;min-height:250px;max-height:250px;text-align:center;">
+            <img src="assets/icon/feedback_thanks.svg" style="height:100%;" alt="">
+          </div>
+        </ion-col>
+
+        <ion-col size-sm="12" size-md="12" size-xs="12" style="text-align:center;">
+          <ion-label style="font-size: 21px;font-weight: 500;color:white;letter-spacing:1px">Thank you for your
+            feedback!</ion-label>
+        </ion-col>
+        <ion-col size-sm="12" size-md="12" size-xs="12" style="text-align:center;">
+          <ion-label style="font-size: 16px;font-weight: 400;color:white;">Your review has been submitted successfully!
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </div>
+
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="modelId == 3">
+
+  <div style="border-radius:15px;">
+    <div>
+      <div class="row" style="text-align: end;margin-right: 0px;">
+        <div class="col-sm-12 col-md-12" style="padding:0 !important">
+          <ion-icon (click)="closeModel('closed')"
+            style="font-size: 30px;color: #ffffff;margin-top:10px;margin: 10px;cursor:pointer;" name="close-sharp">
+          </ion-icon>
+        </div>
+      </div>
+
+      <div style="overflow-x: hidden;">
+        <ion-row>
+          <ion-col size-sm="12" size-md="12" size-xs="12" style="text-align: center;">
+            <img src="assets/icon/thanks.svg" [ngStyle]="{ 'width': (device == 'desktop' ? '50%' : '70%') }" alt="">
+          </ion-col>
+
+          <ion-col size-sm="12" size-md="12" size-xs="12" style="text-align:center;">
+            <ion-label style="font-size: 22px;font-weight: 500;color:white;letter-spacing:1px">Congrats!</ion-label>
+          </ion-col>
+          <ion-col size-sm="12" size-md="12" size-xs="12" style="text-align:center;">
+            <ion-label style="font-size: 16px;font-weight: 400;color:white;">Quiz completed successfully!</ion-label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12"></ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+  </div>
+</ng-container>
+
+<ng-container *ngIf="modelId == 4">
+  <ion-header class="ion-no-border">
+    <ion-toolbar class="head">
+      <ion-title class="ion-text-center" style="font-size: 18px;">Feedback</ion-title>
+      <ion-buttons slot="end" (click)="closeModel('closed')">
+        <ion-back-button style="color: white !important;"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" style="text-align:center;">
+          <span class="rate-tag">Rate your experience with this Quiz</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-xs="1" size-md="1" size-sm="1"></ion-col>
+        <ion-col size-xs="10" size-md="10" size-sm="10" style="text-align: center;">
+          <img style="padding: 5px;text-align: center;width:60% ;" src="./assets/icon/quiz_feedback.svg" alt="">
+        </ion-col>
+        <ion-col size-xs="1" size-md="1" size-sm="1"></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="2" style="text-align: center;" *ngFor="let item of stars; let i=index;">
+          <ion-icon *ngIf="!item?.isSelect" [src]="item?.img" class="progress-star" (click)="rate(0, i)"></ion-icon>
+          <ion-icon *ngIf="item?.isSelect" [src]="item?.img_fill" class="progress-star" (click)="rate(1, i)"></ion-icon>
+        </ion-col>
+
+        <ion-col size="1"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+  <ion-footer class="ion-no-border">
+    <ng-container>
+      <ion-toolbar>
+        <ion-row>
+          <ion-col size-xs="6" size-sm="6" size-md="6" offset="3">
+            <ion-button (click)="submitFeedback('submitted')"
+              style="--background: #579bde;--border-radius: 10px;text-transform:none;width: 100%;" [color]="color">
+              Rate {{rating}}
+              <ion-icon slot="end" name="star"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-toolbar>
+    </ng-container>
+  </ion-footer>
+</ng-container>
