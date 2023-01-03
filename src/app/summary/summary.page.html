@@ -1,3 +1,4 @@
+<!-- eslint-disable @angular-eslint/template/eqeqeq -->
 <ion-header class="ion-no-border">
   <ion-toolbar class="head">
     <ion-title class="ion-text-center" style="font-size: 18px;">Quiz Summary</ion-title>
@@ -83,10 +84,10 @@
       </ion-col>
 
       <ion-col size-xs="6" size-sm="6" size-md="6" offset="3">
-        <ion-button (click)="congrats()" *ngIf="onSummaryFrom != 'dashboard'"
+        <ion-button (click)="congrats()" *ngIf="onSummaryFrom != 'quiz/dashboard'"
           style="--background: var(--ion-color-custom-blue);--border-radius: 10px;text-transform:none;width: 100%;">
           Continue</ion-button>
-        <ion-button *ngIf="onSummaryFrom == 'dashboard'" routerLink="/dashboard"
+        <ion-button *ngIf="onSummaryFrom == 'quiz/dashboard'" routerLink="quiz/dashboard"
           style="--background: var(--ion-color-custom-blue);--border-radius: 10px;text-transform:none;width: 100%;">
           Continue</ion-button>
       </ion-col>
@@ -105,10 +106,10 @@
         </ion-col>
 
         <ion-col size-xs="6" size-sm="6" size-md="6" offset="3">
-          <ion-button (click)="congrats()" *ngIf="onSummaryFrom != 'dashboard'"
+          <ion-button (click)="congrats()" *ngIf="onSummaryFrom != 'quiz/dashboard'"
             style="--background: var(--ion-color-custom-blue);--border-radius: 10px;text-transform:none;width: 100%;">
             Continue</ion-button>
-          <ion-button *ngIf="onSummaryFrom == 'dashboard'" routerLink="/dashboard"
+          <ion-button *ngIf="onSummaryFrom == 'quiz/dashboard'" routerLink="quiz/dashboard"
             style="--background: var(--ion-color-custom-blue);--border-radius: 10px;text-transform:none;width: 100%;">
             Continue</ion-button>
         </ion-col>

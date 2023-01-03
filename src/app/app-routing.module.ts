@@ -4,35 +4,35 @@ import { RouteResolver } from './route.resolver';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'quiz/home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'quiz/dashboard',
     pathMatch: 'full'
   },
   {
-    path: 'dashboard',
+    path: 'quiz/dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardPageModule),
     resolve: {
       routeResolver: RouteResolver
     },
   },
   {
-    path: 'questions',
+    path: 'quiz/questions',
     loadChildren: () => import('./questions/questions.module').then(m => m.QuestionsPageModule)
   },
   {
-    path: 'summary',
+    path: 'quiz/summary',
     loadChildren: () => import('./summary/summary.module').then(m => m.SummaryPageModule)
   },
   {
-    path: 'pop-ups',
+    path: 'quiz/pop-ups',
     loadChildren: () => import('./dialogs/pop-ups/pop-ups.module').then(m => m.PopUpsPageModule)
   },
   {
-    path: 'leaderboard',
+    path: 'quiz/leaderboard',
     loadChildren: () => import('./leaderboard/leaderboard.module').then(m => m.LeaderboardPageModule)
   },
 ];

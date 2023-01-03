@@ -49,7 +49,7 @@ export class QuestionsPage implements OnInit {
 
 
   gotoQuizSummary() {
-    this.router.navigate(['/queans-report']);
+    this.router.navigate(['/quiz/queans-report']);
   }
 
   formGroup!: FormGroup;
@@ -281,7 +281,7 @@ export class QuestionsPage implements OnInit {
   slideNext(i: any) {
     if (i == this.question_list.length - 1 && this.isEndSlide == true) {
       localStorage.setItem('onFeedbackFrom', JSON.stringify('questions'));
-      this.router.navigate(['summary']);
+      this.router.navigate(['quiz/summary']);
     }
     this.slideWithNav.lockSwipeToPrev(false);
     this.slideWithNav.lockSwipeToNext(false);

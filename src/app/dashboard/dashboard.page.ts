@@ -117,7 +117,7 @@ export class DashboardPage implements OnInit {
 
   gotoReport(from: any, quiz_id: any) {
     localStorage.setItem('onReportFrom', JSON.stringify(from));
-    this.router.navigate(['/leaderboard'], { queryParams: { quiz_id, _id: this.userObj?.user_id } });
+    this.router.navigate(['/quiz/leaderboard'], { queryParams: { quiz_id, _id: this.userObj?.user_id } });
   }
 
   async getProfileData() {
@@ -208,7 +208,7 @@ export class DashboardPage implements OnInit {
   resume() {
     if (this.activeQuiz[0]?.questions.length && this.summary?.answers.length && this.activeQuiz[0]?.questions.length != this.summary?.answers.length) {
       localStorage.setItem('activeQuestion', JSON.stringify(this.attended_questions));
-      this.router.navigate(['/questions']);
+      this.router.navigate(['/quiz/questions']);
     }
   }
 
@@ -218,12 +218,12 @@ export class DashboardPage implements OnInit {
     this.currentQuiz = this.summary?.filter((e: any) => e.quiz_id == quiz_id);
 
     if ((this.currentQuiz?.length && quiz_data?.questions?.length && this.currentQuiz[0]?.total && quiz_data?.questions?.length == this.currentQuiz[0]?.total) || is_completed == true) {
-      localStorage.setItem('onSummaryFrom', JSON.stringify('dashboard'));
-      this.router.navigate(['summary']);
+      localStorage.setItem('onSummaryFrom', JSON.stringify('quiz/dashboard'));
+      this.router.navigate(['quiz/summary']);
     }
     else if (this.currentQuiz?.length && quiz_data?.questions?.length && this.currentQuiz[0]?.total && quiz_data?.questions?.length != this.currentQuiz[0]?.total) {
       localStorage.setItem('activeQuestion', JSON.stringify(this.currentQuiz[0]?.total));
-      this.router.navigate(['/questions'],{ queryParams: {quizid: quiz_id, title: quiz_data.quiz_name, image_url: quiz_data.image} });
+      this.router.navigate(['/quiz/questions'],{ queryParams: {quizid: quiz_id, title: quiz_data.quiz_name, image_url: quiz_data.image} });
     }
     else {
       if (type == 'odd') {
@@ -239,7 +239,7 @@ export class DashboardPage implements OnInit {
         else if (type == 'even') {
           this.evenArray[i].spinner = false;
         }
-        this.router.navigate(['questions'],{ queryParams: { quizid: quiz_id, title: quiz_data.quiz_name, image_url: quiz_data.image} });
+        this.router.navigate(['quiz/questions'],{ queryParams: { quizid: quiz_id, title: quiz_data.quiz_name, image_url: quiz_data.image} });
 
         if (response.success == false) {
         }
@@ -260,7 +260,7 @@ export class DashboardPage implements OnInit {
       type: 'replay'
     };
     this.apiService.addAnswers(this.userObj?.user_id, quiz_id, data).subscribe((response: any) => {
-      this.router.navigate(['questions']);
+      this.router.navigate(['quiz/questions']);
       if (response.success == false) {
       }
     }, (error: HttpErrorResponse) => {

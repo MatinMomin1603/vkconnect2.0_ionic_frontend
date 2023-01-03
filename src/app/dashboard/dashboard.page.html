@@ -20,7 +20,7 @@
       <ion-grid fixed>
         <ion-row *ngIf="todaysQuiz">
           <ion-col size-xs="12" size-sm="12" size-md="6" style="text-align: end;margin: auto;">
-            <ion-chip (click)="gotoReport('leaderBoard', todaysQuiz?._id)"
+            <ion-chip (click)="gotoReport('quiz/leaderBoard', todaysQuiz?._id)"
               style="text-align: center;height: 25px;color: #24518c;text-transform: uppercase;letter-spacing: 0px;font-size: 12px;">
               LeaderBoard
             </ion-chip>
@@ -59,7 +59,7 @@
                 <ion-card class="neo-card" *ngFor="let item of evenArray;let i=index;">
                   <ion-row>
                     <ion-col size="12" style="text-align: center;">
-                      <ion-chip (click)="gotoReport('leaderBoard', item?._id)"
+                      <ion-chip (click)="gotoReport('quiz/leaderBoard', item?._id)"
                         style="text-align: center;height: 25px;color: #24518c;text-transform: uppercase;letter-spacing: 0px;font-size: 12px;">
                         LeaderBoard
                       </ion-chip>
@@ -105,7 +105,7 @@
                 <ion-card class="neo-card" *ngFor="let item of oddArray;let i=index;">
                   <ion-row>
                     <ion-col size="12" style="text-align: center;">
-                      <ion-chip (click)="gotoReport('leaderBoard', item?._id)"
+                      <ion-chip (click)="gotoReport('quiz/leaderBoard', item?._id)"
                         style="text-align: center;height: 25px;color: #24518c;text-transform: uppercase;letter-spacing: 0px;font-size: 12px;">
                         LeaderBoard
                       </ion-chip>

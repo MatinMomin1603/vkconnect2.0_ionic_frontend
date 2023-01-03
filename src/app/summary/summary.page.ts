@@ -1,3 +1,9 @@
+/* eslint-disable @typescript-eslint/semi */
+/* eslint-disable eqeqeq */
+/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable quote-props */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -17,6 +23,7 @@ export class SummaryPage implements OnInit {
   from: any;
   quiz_id: any;
   summary: any = [];
+  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
   isShow: boolean = false;
   onSummaryFrom: any;
   quiz_data: any;
@@ -64,6 +71,7 @@ export class SummaryPage implements OnInit {
   ngOnInit() {
   }
 
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnDestroy(): void {
     localStorage.removeItem('onSummaryFrom');
   }
@@ -135,7 +143,7 @@ export class SummaryPage implements OnInit {
     modal.onDidDismiss().then((modelData) => {
       if (modelData !== null) {
         this.modelData = modelData.data;
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['quiz/dashboard']);
       }
     });
     return await modal.present();
